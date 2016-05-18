@@ -1,0 +1,15 @@
+<div class="list-group-item search-product-item">
+    <h4>{{ product.title }}</h4>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <p>{{ product.description }}</p>
+        </div>
+        <div class="col-sm-3">
+            <h4>{{ product.price }} EURO</h4>
+        </div>
+    </div>
+
+    <small><i class="fa fa-globe"></i> {{ product.url }}</small>
+    <a class="select-product" href="#" data-product-id="{{ product.id }}">Wählen Sie ein Produkt</a>
+</div>

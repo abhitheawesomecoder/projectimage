@@ -1,0 +1,98 @@
+<div id="imgshop-{{ image.id }}" class="imgshop" data-image-id="{{ image.id }}">
+    <img class="imgshop-image"
+         data-original-width="{{ image.width }}"
+         data-original-height="{{ image.height}}"
+         src="{{ image.url }}">
+
+    {{~#each tags~}}
+        <div class="imgshop-tag" data-pos-x="{{ pos_x }}" data-pos-y="{{ pos_y }}" style="display: none">
+            <div class="imgshop-tag-btn">
+                {{~#xIf color "===" "1"~}} <span class="blue"></span> {{~/xIf~}}
+                {{~#xIf color "===" "2"~}} <span class="black"></span> {{~/xIf~}}
+                {{~#xIf color "===" "3"~}} <span class="green"></span> {{~/xIf~}}
+                {{~#xIf color "===" "4"~}} <span class="yellow"></span> {{~/xIf~}}
+                {{~#xIf color "===" "5"~}} <span class="red"></span> {{~/xIf~}}
+                {{~#each ../tags_icons~}}
+                    {{~#xIf ../color "==i==" id~}} <img src="{{ image }}" width="30" height="30"> {{/xIf}}
+                {{~/each~}}
+            </div>
+            <div class="imgshop-tag-product">
+                <div class="imgshop-tag-product-details">
+                    {{~#xIf product.image "!==" ""~}}
+                        <img src='{{ product.image }}' width="220">
+                    {{~/xIf~}}
+                    {{~#xIf product.youtube "===" ""~}}
+                        <h4 class="imgshop-tag-product-title">
+                            {{ product.title }}
+                        </h4>
+
+                        <p class="imgshop-tag-product-description wrapword">{{ product.description }}</p>
+                    {{~/xIf~}}
+                    {{~#xIf product.youtube "!==" ""~}}
+                        {{~#xIf product.image "===" ""~}}
+                        <object width="320" height="180">
+                          <param name="movie"
+                                 value="https://www.youtube.com/v/{{ product.youtube }}?version=3"></param>
+                          <param name="allowScriptAccess" value="always"></param>
+                          <embed src="https://www.youtube.com/v/{{ product.youtube }}?version=3"
+                                 type="application/x-shockwave-flash"
+                                 allowscriptaccess="always"
+                                 width="320" height="180"></embed>
+                        </object>
+                        {{~/xIf~}}
+                        <p class="imgshop-tag-product-description">{{ product.description }}</p>
+                    {{~/xIf~}}
+                    <div class="imgshop-tag-product-more">
+                        {{~#compare product.price 0 operator="!="~}}
+                            <span class="imgshop-tag-product-price">{{ product.price_formatted }} </span>
+                        {{~/compare~}}
+                        {{~#if product.url~}}
+                        <a href="http://{{ product.url }}" class="imgshop-tag-product-link" target="_blank">
+                            {{~#xIf product.button "!==" ""~}}
+                            {{ product.button }}
+                            {{~/xIf~}}
+                            {{~#xIf product.button "===" ""~}}
+                            Zum Produkt
+                            {{~/xIf~}}
+                        </a>
+                        {{~/if~}}
+                        {{~#xIf product.paypal "!==" ""~}}
+                        <a href="http://{{ product.paypal }}" class="imgshop-tag-product-link" target="_blank">
+                            Jetzt kaufen!
+                        </a>
+                        {{~/xIf~}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{~/each~}}
+</div>
+
+<scr{{!}}ipt type="text/javascript">// <![CDATA[
+(function (d, $, s) {
+    if (!s) {
+        var IMGSHOP_URL = '{{ base_url }}';
+        var h = d.getElementsByTagName('head')[0];
+        var a = function (t, url) {
+            var r = d.createElement(t === 'style' ? 'link' : 'script');
+            r.setAttribute('type', t === 'style' ? 'text/css' : 'text/javascript');
+            if (t === 'style') {
+                r.setAttribute('rel', 'stylesheet');
+                r.setAttribute('type', 'text/css');
+                r.setAttribute('href', url);
+            } else {
+                r.setAttribute('type', 'text/javascript');
+                r.setAttribute('src', url);
+            }
+            h.appendChild(r);
+        };
+
+        if (!$) {
+            a('script', '{{ base_url }}/assets/scripts/jquery.js');
+        }
+
+        a('style', '{{ base_url }}/assets/styles/imgshop.css');
+        a('script', '{{ base_url }}/assets/scripts/imgshop.js');
+    }
+})(document, window.jQuery, window.ImgShop);
+// ]]></scr{{!}}ipt>
