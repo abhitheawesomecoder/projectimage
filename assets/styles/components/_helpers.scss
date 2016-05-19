@@ -1,0 +1,75 @@
+$sizes: (lg: 25px, md: 15px, sm: 10px, xs: 5px);
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
+.bg-orange {
+  background-color: $orange;
+}
+
+.bg-red {
+  background-color: $red;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-margin-right {
+  margin-right: 0;
+}
+
+.no-margin-left {
+  margin-left: 0;
+}
+
+.no-margin-top {
+  margin-top: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-border {
+  border: 0;
+}
+
+.no-rounded {
+  border-radius: 0 !important;
+}
+
+@each $name, $size in $sizes {
+  .padding-#{$name} {
+    padding: $size;
+  }
+
+  .padding-top-#{$name} {
+    padding-top: $size;
+  }
+
+  .v-padding-#{$name} {
+    padding: $size 0;
+  }
+
+  .h-padding-#{$name} {
+    padding: 0 $size;
+  }
+
+  .margin-top-#{$name} {
+    margin-top: $size;
+  }
+
+  .margin-bottom-#{$name} {
+    margin-bottom: $size;
+  }
+}

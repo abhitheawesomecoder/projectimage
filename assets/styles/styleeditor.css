@@ -1,0 +1,104 @@
+/*
+	Author: Lumberjacks
+	Template: Beard (Landing Page)
+	Version: 1.0
+	URL: http://themeforest.net/user/Lumberjacks/
+*/
+
+
+
+/* TABLE OF CONTENTS
+
+	1. Import section
+	2. Basic styles
+	3. Typography
+	4. Header
+  5. Product showcase
+  6. Icon and features
+  7. Product showcase center
+  8. Pricing table
+  9. Parallax with texts
+  10. Customer satisfaction
+  11. Clients
+  12. News
+  13. Video
+  14. App stores
+  15. FAQ
+  16. Team
+  17. Testimonials
+  18. Twitter
+  19. Contact
+  20. Footer
+  21. Sidebar menu
+  22. Breakpoints for other resolutions
+
+*/
+
+
+
+/* 1. IMPORT SECTION */
+
+	@import url("bootstrap.css");
+	@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,300,300italic&subset=latin,latin-ext");
+	@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&subset=latin,latin-ext");
+	@import url("ionicons.min.css");
+  @import url("slick.css");
+
+
+
+
+
+
+/* 20. FOOTER */
+
+html, body, #footer {height: 100%;}
+
+body > #footer {
+    height: auto;
+    min-height: auto;
+}
+
+
+
+
+
+  .footer {
+  
+   position: relative;
+    min-height: auto;
+    height: auto !important;
+    height: 100%;
+    padding: 80px 0;
+	background-color: #ffffff;
+
+
+  }
+
+  .lj-footer-name h4 {
+    font-size: 1.75em;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .lj-footer-menu ul {
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style-type: none;
+	
+  }
+
+  .lj-footer-menu ul li a {
+    color: #888;
+    -moz-transition: padding-left 0.125s ease-in-out 0s;
+    -o-transition: padding-left 0.125s ease-in-out 0s;
+    -webkit-transition: padding-left 0.125s ease-in-out 0s;
+    transition: padding-left 0.125s ease-in-out 0s;
+  }
+
+  .lj-footer-menu ul li a:hover {
+    color: #000;
+    padding-left: 5px;
+  }
+
+

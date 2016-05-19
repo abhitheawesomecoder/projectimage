@@ -1,0 +1,180 @@
+// Bootstrap Override
+// -----------------------------------
+
+.form-control {
+  @extend .no-rounded;
+  @include border-radius(0);
+  @include box-shadow(none);
+  padding: 10px;
+  height: auto;
+  font-size: 13px;
+
+  &:focus {
+    border-color: #999;
+    @include box-shadow(none);
+  }
+}
+
+.input-group-btn:last-child > .btn {
+  padding: 9px 20px;
+}
+
+.btn {
+  @include border-radius(1px);
+  @include box-shadow(none);
+}
+
+.btn-primary {
+  border-color: $btn-primary-bg-hover-color;
+  background-color: $btn-primary-bg-color;
+  color: $btn-primary-text-color;
+
+  &:hover {
+    background-color: $btn-primary-bg-hover-color;
+  }
+}
+
+.input-group-addon {
+  @extend .no-rounded;
+}
+
+legend {
+  color: $white-dark;
+}
+
+// PANEL
+// ------------------------
+
+@mixin panel($bg-color,
+$toolbar-bg-color,
+$body-bg-color,
+$text-color,
+$toolbar-text-color,
+$body-text-color,
+$border-color,
+$body-padding: 10px) {
+  .panel-default {
+    border-radius: 0;
+    box-shadow: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .panel-heading {
+    border-radius: 0;
+    background: $bg-color;
+    border-bottom: 0;
+    color: $text-color;
+    padding: 15px;
+  }
+
+  .panel-toolbar {
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    padding: 10px 15px;
+    background: $toolbar-bg-color;
+  }
+
+  .panel-body {
+    background: $body-bg-color;
+    color: $body-text-color !important;
+    padding: $body-padding;
+  }
+
+  .panel-footer {
+    background: $bg-color;
+    color: $text-color;
+    border: 0;
+    padding: 15px;
+    border-radius: 0;
+  }
+}
+
+
+// NAV TABS
+// ------------------------
+
+@mixin nav-tabs($bg-color, $border-color, $text-color, $active-bg-color) {
+  .nav-tabs {
+    background: $bg-color;
+    @include border-radius(0);
+    border-bottom: 1px solid $border-color;
+    border-bottom: 0;
+  }
+
+  .nav-tabs > li > a {
+    border: 0;
+    padding: 14px 20px;
+    color: $text-color;
+    font-weight: 500;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .nav-tabs > li > a:hover {
+    background: none;
+    color: $text-color;
+    outline: none;
+  }
+
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:hover,
+  .nav-tabs > li.active > a:focus {
+    background-color: $active-bg-color;
+    margin-top: -1px;
+  }
+
+  .nav-tabs > li.active:first-child > a,
+  .nav-tabs > li.active:first-child > a:hover,
+  .nav-tabs > li.active:first-child > a:focus {
+    border-left: 0;
+  }
+
+  .nav-tabs > li.active:last-child > a,
+  .nav-tabs > li.active:last-child > a:hover,
+  .nav-tabs > li.active:last-child > a:focus {
+    border-right: 0;
+  }
+
+  .nav-tabs.nav-justified > li > a {
+    @include border-radius(0);
+  }
+}
+
+// MODAL
+// ------------------------
+
+@mixin modal($bg-color, $border-color, $text-color: inherit) {
+  .modal-dialog {
+    .modal-header {
+      border-bottom: 1px solid $border-color;
+      padding: 5px 10px;
+    }
+
+    .modal-content {
+      border-radius: 0;
+      border: 5px solid $border-color;
+      background-color: $bg-color;
+      box-shadow: none;
+    }
+
+    .modal-footer {
+      border-top: 1px solid $border-color;
+    }
+  }
+
+}
+
+// List Group
+// --------------------------
+
+@mixin list-group($bg-color, $text-color, $border-color) {
+  .list-group-item {
+    @include border-radius(0);
+    background: $bg-color;
+    color: $text-color;
+    border: 0;
+    border-bottom: 1px solid $border-color;
+  }
+}

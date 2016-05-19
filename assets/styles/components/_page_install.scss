@@ -1,0 +1,213 @@
+#install-ctrl {
+
+  @include panel($gray-dark, $gray, $gray, $white-dark, $white-dark, $white-dark, 30px);
+
+  .article-body {
+    display: none;
+  }
+
+  .article-body.active {
+    display: block;
+  }
+
+  /**
+   * Netaviva Install & Docs Styles Below
+   */
+
+  /* nav-vertical-tabs component */
+  .nav-tabs-vertical {
+    border-right: 1px solid #ddd;
+  }
+
+  .nav-tabs-vertical li {
+    margin-right: -1px;
+  }
+
+  .nav-tabs-vertical>li.active>a, .nav-tabs-vertical>li.active>a:hover, .nav-tabs-vertical>li.active>a:focus {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-right-color: transparent;
+  }
+
+  .nav-tabs-vertical>li>a {
+    line-height: 1.428571429;
+    border: 1px solid transparent;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .badge { background: #F2756A; }
+
+  #nav-menu{
+    position: fixed;
+    top: 45px;
+    right: 45px;
+    z-index: 2000;
+  }
+  #nav-menu .dropdown-menu {
+    left: inherit;
+    right: 0px;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0px;
+    padding-top: 10%;
+    background-color: #3b5998;
+    color: #fff;
+    min-height: 750px;
+  }
+
+  .sidebar-header {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .sidebar-header .title{
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .sidebar-header .title a{
+    text-decoration: none;
+    color: #fff;
+  }
+
+  a.nav-link {
+    padding-bottom: 5px;
+    padding-top: 7px;
+    color: #aaa;
+  }
+  a.nav-link i{
+    font-size: 16px;
+  }
+  a.nav-link:hover { color: #777 }
+
+  #bio {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  #contact-list li .fa,
+  article .share .btn {
+    -o-transition:color .2s ease-out, background 1s ease-in;
+    -ms-transition:color .2s ease-out, background 1s ease-in;
+    -moz-transition:color .2s ease-out, background 1s ease-in;
+    -webkit-transition:color .2s ease-out, background 1s ease-in;
+    transition:color .2s ease-out, background 1s ease-in;
+  }
+  #contact-list li:hover .fa-twitter,
+  article .share .twitter:hover {
+    color: #00ACEE;
+    border-color: #00ACEE;
+  }
+  #contact-list li:hover .fa-linkedin {
+    color: #1D87BD;
+  }
+  #contact-list li:hover .fa-envelope {
+    color: #E93E30;
+  }
+  #contact-list li:hover .fa-pinterest {
+    color: #CC2127;
+  }
+  #contact-list li:hover .fa-rss {
+    color: #e74c3c;
+  }
+  article .share .facebook:hover {
+    color: #43609C;
+    border-color: #43609C;
+  }
+  article .share .gplus:hover {
+    color: #C13929;
+    border-color: #C13929;
+  }
+
+  #contact-list-secondary {
+    padding-bottom: 10px;
+  }
+
+  .page-header {
+    text-shadow: 1px 1px 1px #FFF;
+    margin: 0;
+    padding: 0;
+  }
+
+  article{
+    margin-bottom: 40px;
+    padding: 10px;
+  }
+
+  article img { max-width: 100%; }
+
+  .article-body{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .post-date {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+
+  /** The Magic **/
+  .btn-group, .btn-group-vertical {
+    padding-left: 15px;
+  }
+  .btn-breadcrumb .btn:not(:last-child):after {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 17px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 10px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    left: 100%;
+    z-index: 3;
+  }
+  .btn-breadcrumb .btn:not(:last-child):before {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 17px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 10px solid rgb(173, 173, 173);
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 3;
+  }
+
+  /** The Spacing **/
+  .btn-breadcrumb .btn {
+    padding:6px 12px 6px 24px;
+  }
+  .btn-breadcrumb .btn:first-child {
+    padding:6px 6px 6px 10px;
+  }
+  .btn-breadcrumb .btn:last-child {
+    padding:6px 18px 6px 24px;
+  }
+
+  /** Default button **/
+  .btn-breadcrumb .btn.btn-default:not(:last-child):after {
+    border-left: 10px solid #fff;
+  }
+  .btn-breadcrumb .btn.btn-default:not(:last-child):before {
+    border-left: 10px solid #ccc;
+  }
+  .btn-breadcrumb .btn.btn-default:hover:not(:last-child):after {
+    border-left: 10px solid #ebebeb;
+  }
+  .btn-breadcrumb .btn.btn-default:hover:not(:last-child):before {
+    border-left: 10px solid #adadad;
+  }
+}

@@ -1,0 +1,211 @@
+@-moz-keyframes imgshop-expand {
+    0% {
+        transform: scale(.8);
+        -moz-transform: scale(.8)
+    }
+    50% {
+        transform: scale(1.2);
+        -moz-transform: scale(1.2)
+    }
+    100% {
+        transform: scale(.8);
+        -moz-transform: scale(.8)
+    }
+}
+
+@-o-keyframes imgshop-expand {
+    0% {
+        transform: scale(.8);
+        -o-transform: scale(.8)
+    }
+    50% {
+        transform: scale(1.5);
+        -o-transform: scale(1.5)
+    }
+    100% {
+        transform: scale(.8);
+        -o-transform: scale(.8)
+    }
+}
+
+@keyframes imgshop-expand {
+    0% {
+        transform: scale(.8);
+        -ms-transform: scale(.8)
+    }
+    50% {
+        transform: scale(1.2);
+        -ms-transform: scale(1.2)
+    }
+    100% {
+        transform: scale(.8);
+        -ms-transform: scale(.8)
+    }
+}
+
+.imgshop {
+    clear: both;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+	height: auto;
+    max-width: auto;
+}
+
+.imgshop-tag {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    overflow: visible;
+
+}
+
+
+.imgshop-image {
+	width: 100%;
+    max-width: 100%;
+    height: auto;
+
+}
+
+.imgshop-tag:hover:before, .imgshop-tag.show:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 23px;
+    left: 0;
+    border-bottom: 10px solid #FFF;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
+}
+
+
+.imgshop-tag-btn {
+    -webkit-border-radius: 30%;
+    -moz-border-radius: 30%;
+    border-radius: 30%;
+    
+    -webkit-animation: imgshop-expand 6s infinite;
+    -moz-animation: imgshop-expand 6s infinite;
+    -o-animation: imgshop-expand 6s infinite;
+    animation: imgshop-expand 6s infinite;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    
+    padding: 5px;
+    max-width: 20px;
+    max-height: 20px;
+    cursor: pointer;
+    z-index: 10;
+    box-sizing: border-box;
+        /*background-color: #FFF;*/
+    position: relative;
+
+
+}
+
+
+.imgshop-tag-btn > span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+	
+	
+}
+.imgshop-tag-btn > span.blue {
+    background-color: #169ED0;
+}
+.imgshop-tag-btn > span.black {
+    background-color: #333333;
+
+}
+.imgshop-tag-btn > span.green {
+    background-color: #009636;
+}
+.imgshop-tag-btn > span.yellow {
+    background-color: #E4E100;
+}
+.imgshop-tag-btn > span.red {
+    background-color: #E70A00;
+}
+
+.imgshop-tag:hover .imgshop-tag-product {
+    display: block;
+	opacity: 1.0;
+	
+}
+
+.imgshop-tag:hover .imgshop-tag-btn {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused
+
+}
+
+.imgshop-tag-product {
+    position: absolute;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;;
+    display: none;
+    min-width: 250px;
+    max-width: 350px;
+    background: #FFF;
+    top: 30px;
+    left: -18px;
+    color: #CCC;
+    font-size: 12px;
+    padding: 15px;
+    z-index: 9999;
+    -webkit-box-shadow: 3px 3px 16px rgba(50, 50, 50, 0.5);
+    -mox-box-shadow: 3px 3px 16px rgba(50, 50, 50, 0.5);
+    box-shadow: 3px 3px 16px rgba(50, 50, 50, 0.5);
+
+}
+
+.imgshop-tag-product-details {
+    display: inline-block;
+    width: 100%;
+}
+
+.imgshop-tag-product-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #144158;
+    display: block;
+    padding-top: 2px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.imgshop-tag-product-description {
+    display: inline-block;
+    color: #8B91A0;
+    width: 100%;
+    overflow: hidden;
+    visibility: visible;
+    white-space: normal;
+}
+
+.imgshop-tag-product-more {
+    display: inline-block;
+    width: 100%;
+}
+
+.imgshop-tag-product-link {
+    color: #A00;
+    float: right;
+}
+
+.imgshop-tag-product-price {
+	font-weight: bold;
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    float: left;
+    color: #1F4A60;
+}

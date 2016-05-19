@@ -1,0 +1,52 @@
+.images-list {
+
+  .image-item {
+    background: #2B2B2B;
+    margin-bottom: 20px;
+    position: relative;
+    border: 1px solid $gray-lighter;
+    padding: 10px;
+  }
+
+  .image-preview {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 200px;
+    overflow: hidden;
+
+    background: $gray-lighter;
+
+    img {
+      width: 100% !important;
+    }
+  }
+
+  .image-title {
+    padding: 10px 0;
+    color: #FFF;
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .image-delete-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #900;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    display: none;
+  }
+
+  .image-delete-btn:hover {
+    text-decoration: none;
+  }
+
+  .image-item:hover .image-delete-btn {
+    display: block;
+  }
+}

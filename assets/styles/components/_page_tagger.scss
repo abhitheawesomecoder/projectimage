@@ -1,0 +1,78 @@
+#creator-ctrl {
+  @include panel($gray, $gray, $gray, $white-dark, $white-dark, $white-dark, $gray-lighter, 40px);
+}
+
+#tagger-ctrl {
+
+  @include panel($body-bg-color, $body-bg-color, $body-bg-color, $white-dark, $white-dark, $white-dark, $gray-lighter, 20px);
+
+  #tag-image-container {
+    position: relative;
+    margin: 5px;
+    width: 100%;
+    text-align: center;
+  }
+
+  #tag-image-holder {
+    position: relative;
+    margin: 0 auto;
+    cursor: crosshair;
+    text-align: center;
+    max-width: 850px;
+    border: 5px solid #CCC;
+  }
+
+  #tag-image {
+    max-width: 840px;
+    width: 100%;
+    height: 100%;
+    @include box-shadow(0px 0px 8px rgba(0, 0, 0, 0.71));
+  }
+}
+
+#tag-modal {
+  .modal-body {
+    padding: 0;
+  }
+
+  .tab-content {
+    padding: 20px;
+  }
+
+  #search-product .maskable {
+    min-height: 100px;
+  }
+
+  @include modal($gray, $gray-dark);
+  @include nav-tabs($gray-dark, $gray-light, $white, $gray);
+  @include list-group($gray-dark, $white, $gray-light);
+}
+
+#generate-code-modal {
+  @include modal($gray, $gray-dark);
+}
+
+#public-url-modal {
+  @include modal($gray, $gray-dark);
+}
+
+.tag-image-marker {
+  position: absolute;
+  border: 4px solid #55AB55;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  display: block;
+
+  &:hover {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.btn-generate-code {
+  padding: 15px 60px;
+  font-weight: bold;
+}

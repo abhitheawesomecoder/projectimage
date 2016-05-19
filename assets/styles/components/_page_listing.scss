@@ -1,0 +1,39 @@
+#listing-ctrl {
+
+  .product-item {
+    background: $gray-dark;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 20px;
+  }
+
+  .product-title {
+    padding: 10px;
+    color: #FFF;
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  .product-summary {
+    font-size: 13px;
+  }
+
+  .product-price {
+    padding: 10px;
+    font-weight: 700;
+  }
+
+  .product-details {
+    padding: 10px;
+    background: $gray;
+    max-height: 110px;
+    min-height: 110px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .product-url {
+    padding: 10px;
+  }
+}
