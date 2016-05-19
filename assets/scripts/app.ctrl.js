@@ -184,11 +184,16 @@ App.controller('tagger-ctrl', function (ctrl) {
       }
     });
 
-    Handlebars.compile($tagCtrl.find('#tpl-code').html())({
-              image: App.get('tagger_image'),
+   var imageData = App.get('image');
+   var imageTags = imageData.tags;
+
+
+   Handlebars.compile($tagCtrl.find('#tpl-code').html())({
+              image: imageData,
               tags_icons: App.get('tags_icons'),
-              tags: tags,
-              base_url: App.get('base_url')
+              tags: imageTags,
+              base_url: App.get('base_url'),
+
     });
 
     $('body').append($marker);

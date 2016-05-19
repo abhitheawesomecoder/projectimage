@@ -674,6 +674,7 @@ class AppController extends BaseController
         $fullurl = url();
         
         $image = Image::find($id);
+        $image->load('tags', 'tags.product');
 
 
         if(Auth::user()->premium == 0)

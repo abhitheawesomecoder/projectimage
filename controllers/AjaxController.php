@@ -393,7 +393,8 @@ class AjaxController extends BaseController
         $tag['product'] = $product;
 
         return new JsonResponse([
-            'data' => $tag
+            'data' => $tag,
+            'product' => $product
         ]);
     }
 
