@@ -170,7 +170,7 @@
 @section("scripts_app_before")
     <script type="text/javascript">
         App.set('image_public_url', '{{ $publicUrl }}');
-      /*  App.set('tagger_image', {{ json_encode($image) }});*/
+        App.set('tagger_image', {{ json_encode($image) }});
         App.set('tagger_image_tags', {{ $image->tags->toJSON() }});
         App.set('tags_icons', {{ json_encode($tags_icons) }});
         App.set('image', {{ json_encode($image) }});

@@ -116,6 +116,7 @@ App.controller('tagger-ctrl', function (ctrl) {
 
   load_update_tagger();
 
+  var $container = $('#tag-imagger');
   var $tagCtrl = $(ctrl);
   var $tagImage = $('#tag-image');
   var $tagModal = $('#TaggerProduct');
@@ -188,7 +189,7 @@ App.controller('tagger-ctrl', function (ctrl) {
    var imageTags = imageData.tags;
 
 
-   Handlebars.compile($tagCtrl.find('#tpl-code').html())({
+   var code = Handlebars.compile($tagCtrl.find('#tpl-code').html())({
               image: imageData,
               tags_icons: App.get('tags_icons'),
               tags: imageTags,
@@ -196,7 +197,9 @@ App.controller('tagger-ctrl', function (ctrl) {
 
     });
 
-    $('body').append($marker);
+   $container.html(code);
+
+    //$('body').append($marker);
   };
 
 	/**
