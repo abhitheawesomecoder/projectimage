@@ -135,7 +135,7 @@ App.controller('tagger-ctrl', function (ctrl) {
    * @param  {[type]} posY
    * @return {[type]}
    */
-  var placeTag = function (id, color, posX, posY) {
+  var placeTag = function (id, color, posX, posY,product) {
 
     if(color == ' 1') {
       def_color = ' blue';  
@@ -168,8 +168,7 @@ App.controller('tagger-ctrl', function (ctrl) {
     });
 
     var $markerproduct = $('<div />', {
-      class: 'image-product',
-      text: 'Product'
+      class: 'image-product'     
     }).css({
       // Position X & Y are saved relative to original image sizes
       // since the tagger image is resized, we have to calculate a new posX and posY
@@ -178,8 +177,35 @@ App.controller('tagger-ctrl', function (ctrl) {
       top: $tagImage.offset().top + 30 + parseInt((posY * $tagImage.height()) / oH) + 'px'
     });
 
-    $markerproduct.append("<div>hello world</div>")
+/*******************************/
+   $('.panel-body').on({
+        mouseenter: function () {
+              $(".image-product").hide();            
+        }
+    });
 
+    $('body').on({
+        mouseenter: function () {
+              $(".image-product").hide();
+              $(this).next().show();
+        }
+    }, ".tag-image-marker");
+
+     var imageData = App.get('image');
+     var imageTags = imageData.tags;    
+
+     var code = Handlebars.compile($tagCtrl.find('#tpl-tagger-code').html())({
+                image: imageData,
+                product: product,
+                tags_icons: App.get('tags_icons'),
+                tags: imageTags,
+                base_url: App.get('base_url'),
+
+      });
+
+    $markerproduct.append(code);
+
+/*******************************/
     $marker.on('click', function () {
       if (confirm('Möchten Sie diese Markierung wirklich löschen?')) {
         $.ajax({
@@ -370,7 +396,7 @@ App.controller('tagger-ctrl', function (ctrl) {
                 localStorage.removeItem("base64-image");
 
                 $tagModal.modal('hide');
-                placeTag(res.data.id, ' '+res.data.color, res.data.pos_x, res.data.pos_y);
+             //   placeTag(res.data.id, ' '+res.data.color, res.data.pos_x, res.data.pos_y);
               }
             });
 
@@ -465,7 +491,7 @@ App.controller('tagger-ctrl', function (ctrl) {
                 $inputUrlVideo.val('');
 
                 $tagModal.modal('hide');
-                placeTag(res.data.id, ' '+res.data.color, res.data.pos_x, res.data.pos_y);
+             //   placeTag(res.data.id, ' '+res.data.color, res.data.pos_x, res.data.pos_y);
               }
             });
           } else {
@@ -537,7 +563,7 @@ App.controller('tagger-ctrl', function (ctrl) {
                 $inputUrlVideo.val('');
 
                 $tagModal.modal('hide');
-                placeTag(res.data.id, ' '+res.data.color, res.data.pos_x, res.data.pos_y);
+            //    placeTag(res.data.id, ' '+res.data.color, res.data.pos_x, res.data.pos_y);
               }
             });
           } else {
@@ -779,7 +805,7 @@ App.controller('tagger-ctrl', function (ctrl) {
         if (res.data) {
           tags.push(res.data);
           $tagModal.modal('hide');
-          placeTag(res.data.id, ' '+res.data.color, res.data.pos_x, res.data.pos_y);
+      //    placeTag(res.data.id, ' '+res.data.color, res.data.pos_x, res.data.pos_y);
         }
       });
     });
@@ -789,7 +815,7 @@ App.controller('tagger-ctrl', function (ctrl) {
     // Retrieve and display all existing tags
     for (var key in tags) {
       if (tags.hasOwnProperty(key)) {
-        placeTag(tags[key].id, ' '+tags[key].color, tags[key].pos_x, tags[key].pos_y);
+        placeTag(tags[key].id, ' '+tags[key].color, tags[key].pos_x, tags[key].pos_y,tags[key].product);
       }
     }
   }, 50);

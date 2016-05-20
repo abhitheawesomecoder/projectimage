@@ -1,5 +1,18 @@
 .image-product{
   position: absolute;
+  background: #fff none repeat scroll 0 0;
+  box-shadow: 3px 3px 16px rgba(50, 50, 50, 0.5);
+  color: #ccc;
+  display: none;
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  left: -18px;
+  max-width: 350px;
+  min-width: 250px;
+  padding: 15px;
+  position: absolute;
+  top: 30px;
+  z-index: 9999;
 }
 
 .hr {
