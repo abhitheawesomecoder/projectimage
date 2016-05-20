@@ -157,8 +157,7 @@ App.controller('tagger-ctrl', function (ctrl) {
     }
 
     var $marker = $('<a />', {
-      class: 'tag-image-marker'+def_color,
-      title: 'Klicken um Markierung zu löschen'
+      class: 'tag-image-marker'+def_color    
     }).data('tag-id', id).css({
       // Position X & Y are saved relative to original image sizes
       // since the tagger image is resized, we have to calculate a new posX and posY
@@ -206,7 +205,19 @@ App.controller('tagger-ctrl', function (ctrl) {
     $markerproduct.append(code);
 
 /*******************************/
-    $marker.next().find('.pcloseButton').on('click', function () {
+   
+
+    Handlebars.compile($tagCtrl.find('#tpl-code').html())({
+              image: App.get('tagger_image'),
+              tags_icons: App.get('tags_icons'),
+              tags: tags,
+              base_url: App.get('base_url')
+    });
+
+    $('body').append($marker);     
+    $('body').append($markerproduct); 
+
+     $marker.next().find('.pcloseButton').on('click', function () {
       if (confirm('Möchten Sie diese Markierung wirklich löschen?')) {
         /*$.ajax({
           url: App.get('base_url') + '/ajax/tag-image',
@@ -218,20 +229,14 @@ App.controller('tagger-ctrl', function (ctrl) {
           //var $products_free_limit = $('#products_free_limit');
           //$products_free_limit.val(parseInt($products_free_limit.val())-1);
           $marker.remove();
+          $markerproduct.remove();
           location.reload(true);
         });*/
       }
     });
 
-    Handlebars.compile($tagCtrl.find('#tpl-code').html())({
-              image: App.get('tagger_image'),
-              tags_icons: App.get('tags_icons'),
-              tags: tags,
-              base_url: App.get('base_url')
-    });
 
-    $('body').append($marker);     
-    $('body').append($markerproduct); 
+
   };
 
 	/**
