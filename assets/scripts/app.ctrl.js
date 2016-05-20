@@ -167,6 +167,19 @@ App.controller('tagger-ctrl', function (ctrl) {
       top: $tagImage.offset().top + parseInt((posY * $tagImage.height()) / oH) + 'px'
     });
 
+    var $markerproduct = $('<div />', {
+      class: 'image-product',
+      text: 'Product'
+    }).css({
+      // Position X & Y are saved relative to original image sizes
+      // since the tagger image is resized, we have to calculate a new posX and posY
+      // in relation to its resized width and height
+      left: $tagImage.offset().left + parseInt((posX * $tagImage.width()) / oW) + 'px',
+      top: $tagImage.offset().top + 30 + parseInt((posY * $tagImage.height()) / oH) + 'px'
+    });
+
+    $markerproduct.append("<div>hello world</div>")
+
     $marker.on('click', function () {
       if (confirm('Möchten Sie diese Markierung wirklich löschen?')) {
         $.ajax({
@@ -184,14 +197,15 @@ App.controller('tagger-ctrl', function (ctrl) {
       }
     });
 
-    /*Handlebars.compile($tagCtrl.find('#tpl-code').html())({
+    Handlebars.compile($tagCtrl.find('#tpl-code').html())({
               image: App.get('tagger_image'),
               tags_icons: App.get('tags_icons'),
               tags: tags,
               base_url: App.get('base_url')
-    });*/
+    });
 
-    $('body').append($marker);
+    $('body').append($marker);     
+    $('body').append($markerproduct); 
   };
 
 	/**

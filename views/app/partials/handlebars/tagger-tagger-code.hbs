@@ -1,0 +1,48 @@
+<div class="imgshop-tag-product">
+    <div class="imgshop-tag-product-details">
+        {{~#xIf product.image "!==" ""~}}
+            <img src='{{ product.image }}' width="220">
+        {{~/xIf~}}
+        {{~#xIf product.youtube "===" ""~}}
+            <h4 class="imgshop-tag-product-title">
+                {{ product.title }}
+            </h4>
+
+            <p class="imgshop-tag-product-description wrapword">{{ product.description }}</p>
+        {{~/xIf~}}
+        {{~#xIf product.youtube "!==" ""~}}
+            {{~#xIf product.image "===" ""~}}
+            <object width="320" height="180">
+              <param name="movie"
+                     value="https://www.youtube.com/v/{{ product.youtube }}?version=3"></param>
+              <param name="allowScriptAccess" value="always"></param>
+              <embed src="https://www.youtube.com/v/{{ product.youtube }}?version=3"
+                     type="application/x-shockwave-flash"
+                     allowscriptaccess="always"
+                     width="320" height="180"></embed>
+            </object>
+            {{~/xIf~}}
+            <p class="imgshop-tag-product-description">{{ product.description }}</p>
+        {{~/xIf~}}
+        <div class="imgshop-tag-product-more">
+            {{~#compare product.price 0 operator="!="~}}
+                <span class="imgshop-tag-product-price">{{ product.price_formatted }} </span>
+            {{~/compare~}}
+            {{~#if product.url~}}
+            <a href="http://{{ product.url }}" class="imgshop-tag-product-link" target="_blank">
+                {{~#xIf product.button "!==" ""~}}
+                {{ product.button }}
+                {{~/xIf~}}
+                {{~#xIf product.button "===" ""~}}
+                Zum Produkt
+                {{~/xIf~}}
+            </a>
+            {{~/if~}}
+            {{~#xIf product.paypal "!==" ""~}}
+            <a href="http://{{ product.paypal }}" class="imgshop-tag-product-link" target="_blank">
+                Jetzt kaufen!
+            </a>
+            {{~/xIf~}}
+        </div>
+    </div>
+</div>
