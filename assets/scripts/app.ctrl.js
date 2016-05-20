@@ -178,11 +178,11 @@ App.controller('tagger-ctrl', function (ctrl) {
     });
 
 /*******************************/
-   $('.panel-body').on({
+  /* $('.panel-body').on({
         mouseenter: function () {
               $(".image-product").hide();            
         }
-    });
+    });*/
 
     $('body').on({
         mouseenter: function () {
