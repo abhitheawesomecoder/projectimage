@@ -116,6 +116,7 @@ App.controller('tagger-ctrl', function (ctrl) {
 
   load_update_tagger();
 
+  var $container = $('#tag-imagger');
   var $tagCtrl = $(ctrl);
   var $tagImage = $('#tag-image');
   var $tagModal = $('#TaggerProduct');
@@ -184,14 +185,21 @@ App.controller('tagger-ctrl', function (ctrl) {
       }
     });
 
-    /*Handlebars.compile($tagCtrl.find('#tpl-code').html())({
-              image: App.get('tagger_image'),
-              tags_icons: App.get('tags_icons'),
-              tags: tags,
-              base_url: App.get('base_url')
-    });*/
+   var imageData = App.get('image');
+   var imageTags = imageData.tags;
 
-    $('body').append($marker);
+
+   var code = Handlebars.compile($tagCtrl.find('#tpl-code').html())({
+              image: imageData,
+              tags_icons: App.get('tags_icons'),
+              tags: imageTags,
+              base_url: App.get('base_url'),
+
+    });
+
+   $container.html(code);
+
+    //$('body').append($marker);
   };
 
 	/**
@@ -537,7 +545,7 @@ App.controller('tagger-ctrl', function (ctrl) {
     });
 
   // Clicked a point on the image
-  $tagImage.on('click', function (e) {
+  $('body').on('click','.imgshop-image' ,function (e) {
     console.log("click");
     e.stopPropagation();
 
