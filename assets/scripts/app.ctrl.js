@@ -178,11 +178,11 @@ App.controller('tagger-ctrl', function (ctrl) {
     });
 
 /*******************************/
-  /* $('.panel-body').on({
+   $('.panel-body').on({
         mouseenter: function () {
               $(".image-product").hide();            
         }
-    });*/
+    });
 
     $('body').on({
         mouseenter: function () {
@@ -206,9 +206,9 @@ App.controller('tagger-ctrl', function (ctrl) {
     $markerproduct.append(code);
 
 /*******************************/
-    $marker.on('click', function () {
+    $marker.next().find('.pcloseButton').on('click', function () {
       if (confirm('Möchten Sie diese Markierung wirklich löschen?')) {
-        $.ajax({
+        /*$.ajax({
           url: App.get('base_url') + '/ajax/tag-image',
           type: 'DELETE',
           data: {tag_id: id, image_id: App.get('tagger_image').id}
@@ -219,7 +219,7 @@ App.controller('tagger-ctrl', function (ctrl) {
           //$products_free_limit.val(parseInt($products_free_limit.val())-1);
           $marker.remove();
           location.reload(true);
-        });
+        });*/
       }
     });
 
