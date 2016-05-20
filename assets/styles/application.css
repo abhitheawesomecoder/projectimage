@@ -14,6 +14,13 @@
   top: 30px;
   z-index: 9999;
 }
+#closeButton {
+    color:red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size:20px;
+}
 
 .hr {
     width: 45px;
