@@ -135,6 +135,18 @@ App.controller('tagger-ctrl', function (ctrl) {
    * @param  {[type]} posY
    * @return {[type]}
    */
+    $('.panel-body').on({
+        mouseenter: function () {
+              $(".image-product").hide();            
+        }
+    });
+
+    $('body').on({
+        mouseenter: function () {
+              $(".image-product").hide();
+              $(this).next().show();
+        }
+    }, ".tag-image-marker");
   var placeTag = function (id, color, posX, posY,product) {
 
     if(color == ' 1') {
@@ -177,18 +189,7 @@ App.controller('tagger-ctrl', function (ctrl) {
     });
 
 /*******************************/
-   $('.panel-body').on({
-        mouseenter: function () {
-              $(".image-product").hide();            
-        }
-    });
-
-    $('body').on({
-        mouseenter: function () {
-              $(".image-product").hide();
-              $(this).next().show();
-        }
-    }, ".tag-image-marker");
+  
 
      var imageData = App.get('image');
      var imageTags = imageData.tags;    
