@@ -147,7 +147,7 @@ App.controller('tagger-ctrl', function (ctrl) {
               $(this).next().show();
         }
     }, ".tag-image-marker");
-  var placeTag = function (id, color, posX, posY,product) {
+  var placeTag = function (id, color, posX, posY, product) {
 
     if(color == ' 1') {
       def_color = ' blue';  
@@ -220,10 +220,10 @@ App.controller('tagger-ctrl', function (ctrl) {
 
      $marker.next().find('.pcloseButton').on('click', function () {
       if (confirm('Möchten Sie diese Markierung wirklich löschen?')) {
-        /*$.ajax({
+        $.ajax({
           url: App.get('base_url') + '/ajax/tag-image',
           type: 'DELETE',
-          data: {tag_id: id, image_id: App.get('tagger_image').id}
+          data: {tag_id: id, image_id: App.get('tagger_image').id, product_id: product.id}
         }).done(function (response) {
           console.log(response);
           tags.push(response.tagger_image_tags);
@@ -232,7 +232,7 @@ App.controller('tagger-ctrl', function (ctrl) {
           $marker.remove();
           $markerproduct.remove();
           location.reload(true);
-        });*/
+        });
       }
     });
 
@@ -402,7 +402,8 @@ App.controller('tagger-ctrl', function (ctrl) {
                 localStorage.removeItem("base64-image");
 
                 $tagModal.modal('hide');
-             //   placeTag(res.data.id, ' '+res.data.color, res.data.pos_x, res.data.pos_y);
+
+                placeTag(res.data.id, ' '+res.data.color, res.data.pos_x, res.data.pos_y,res.data.product);
               }
             });
 
