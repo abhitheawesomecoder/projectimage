@@ -1,5 +1,10 @@
   <!-- FOOTER -->
+  @if (Auth::check()) 
   <div class="footer">
+  @else
+  <div class="footer navbar-fixed-bottom">
+  @endif
+
     <div class="container">
       <!-- COLUMNS -->
       <div class="row">

@@ -3,7 +3,7 @@
 @section("page_title", "Bild bearbeiten")@stop
 
 @section("content")
-
+<link href="{{ url() }}/assets/styles/imgshop.css" rel="stylesheet">
 
     <section id="tagger-ctrl">
         
@@ -124,6 +124,7 @@
         App.set('image_public_url', '{{ $publicUrl }}');
         App.set('tagger_image', {{ json_encode($image) }});
         App.set('tagger_image_tags', {{ $image->tags->toJSON() }})
+        App.set('image', {{ json_encode($image) }});
 
     @foreach($tags_icons as $icon)
         $('#color-{{ $icon->id }}').click(function() {

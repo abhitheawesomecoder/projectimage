@@ -453,6 +453,7 @@ class AppController extends BaseController
         $fullurl = url();
 
         $image = Image::find($tags->image_id);
+        $image->load('tags', 'tags.product');
 
         $tags_icons = TagsIcons::get();
 

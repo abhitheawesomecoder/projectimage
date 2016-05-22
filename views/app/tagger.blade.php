@@ -4,6 +4,7 @@
 
 @section("content")
 @if($action != 'code')
+<link href="{{ url() }}/assets/styles/imgshop.css" rel="stylesheet">
     <section id="tagger-ctrl">
         
         <div class="panel panel-default">
